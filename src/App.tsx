@@ -3,6 +3,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import Index from "./pages/Index";
 import FreelancerDashboard from "./pages/FreelancerDashboard";
 import FreelancerProjects from "./pages/FreelancerProjects";
@@ -16,6 +17,9 @@ import ProjectDetails from "./pages/ProjectDetails";
 import DeliverableDetails from "./pages/DeliverableDetails";
 import NotFound from "./pages/NotFound";
 
+// ✅ TestDB page for DB connection testing
+import TestDB from "./pages/TestDB";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -25,6 +29,9 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
+          {/* Test DB route */}
+          <Route path="/test-db" element={<TestDB />} />
+
           <Route path="/" element={<Index />} />
 
           {/* Freelancer routes */}
